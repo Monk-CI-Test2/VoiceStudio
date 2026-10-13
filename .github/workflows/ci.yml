@@ -8,7 +8,9 @@ on:
     branches: [main]
     types: [opened, synchronize, reopened]
   push:
-    branches: [main]
+    # GitHub does not emit pull_request events inside public forks. Running on
+    # the exercise branches attaches the same CI checks to their PR head SHA.
+    branches: [main, "feature_branch_*"]
   workflow_dispatch:
 
 permissions:
