@@ -2,6 +2,7 @@
 # shared backend, web frontend and native bridge.
 
 name: CI
+run-name: CI · ${{ github.event_name }} · ${{ github.ref_name }}
 
 on:
   pull_request:
