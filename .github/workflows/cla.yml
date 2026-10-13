@@ -33,7 +33,7 @@ jobs:
       github.event_name == 'pull_request_target' ||
       contains(github.event.comment.body, 'VoiceStudio CLA') ||
       (github.event.issue.pull_request && contains(github.event.comment.body, 'recheck'))
-    runs-on: ubuntu-24.04
+    runs-on: monkci-ubuntu-24.04-4
     # Job level, so comments the `if` skips never take the queue slot. Each run
     # rescans all comments, so a queued run GitHub cancels loses nothing.
     concurrency:

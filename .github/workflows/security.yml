@@ -47,7 +47,7 @@ jobs:
   # and the action picks the right mode from the event automatically).
   secrets:
     name: Secret scan (gitleaks)
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
@@ -65,7 +65,7 @@ jobs:
   # ── CodeQL SAST (Python + JS/TS) ─────────────────────────────────────────
   codeql:
     name: CodeQL (${{ matrix.language }})
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     permissions:
       contents: read
       security-events: write
@@ -113,7 +113,7 @@ jobs:
   # ── Python SAST (bandit → SARIF) ─────────────────────────────────────────
   bandit:
     name: Python SAST (bandit)
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     permissions:
       contents: read
       security-events: write
@@ -153,7 +153,7 @@ jobs:
   # ── Dependency advisories (reporting) ────────────────────────────────────
   dependencies:
     name: Dependency audit
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:

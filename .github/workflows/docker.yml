@@ -80,7 +80,7 @@ jobs:
   build-and-push:
     # Only version releases publish images; other release tags are ignored.
     if: github.event_name != 'release' || startsWith(github.event.release.tag_name, 'v')
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:
@@ -251,7 +251,7 @@ jobs:
   build-and-push-rocm:
     # Only version releases publish images; other release tags are ignored.
     if: github.event_name != 'release' || startsWith(github.event.release.tag_name, 'v')
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
         with:

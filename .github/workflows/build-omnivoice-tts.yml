@@ -39,7 +39,7 @@ permissions:
 jobs:
   build-omnivoice-tts:
     name: Build omnivoice-tts (${{ matrix.platform }})
-    runs-on: ${{ matrix.os }}
+    runs-on: monkci-ubuntu-24.04-4
     continue-on-error: ${{ matrix.experimental }}
     # Bound worst-case cost: a hung leg (esp. the experimental darwin-arm64
     # Metal build) shouldn't run to GitHub's 6h ceiling burning runner minutes.

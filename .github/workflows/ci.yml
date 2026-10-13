@@ -22,7 +22,7 @@ env:
 jobs:
   installer:
     name: Electron installer contracts
-    runs-on: ubuntu-24.04
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -49,7 +49,7 @@ jobs:
 
   test:
     name: Tests (backend + frontend)
-    runs-on: ubuntu-22.04
+    runs-on: monkci-ubuntu-24.04-4
     env:
       # Same restricted-network resilience the smoke matrix already sets. This
       # job resolves the same direct-URL dependency and had none of it, which
@@ -186,7 +186,7 @@ jobs:
 
   linux-native-package:
     name: Linux native package
-    runs-on: ubuntu-24.04
+    runs-on: monkci-ubuntu-24.04-4
     steps:
       - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
       - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
@@ -233,7 +233,7 @@ jobs:
           - os: ubuntu-22.04
             label: Linux
             backend_supported: true
-    runs-on: ${{ matrix.os }}
+    runs-on: monkci-ubuntu-24.04-4
     # Priced for a COLD `uv sync`, on every platform.
     #
     # The previous split (Windows 25, Linux/macOS 10) came from a warm-cache

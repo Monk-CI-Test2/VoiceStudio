@@ -14,7 +14,7 @@ env:
 jobs:
   install:
     name: Install (${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    runs-on: monkci-ubuntu-24.04-4
     timeout-minutes: 60
     strategy:
       fail-fast: false

@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   package:
-    runs-on: ${{ matrix.runner }}
+    runs-on: monkci-ubuntu-24.04-4
     timeout-minutes: 60
     continue-on-error: ${{ matrix.experimental == true }}
     strategy:
