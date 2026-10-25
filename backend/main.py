@@ -395,7 +395,7 @@ from core.auth import (
 )
 from core.csrf import SAFE_HTTP_METHODS, cookie_csrf_allowed, origin_allowed
 
-# The 30-router fan-out (`from api.routers import (...)`) is the widest —
+# The router fan-out (`from api.routers import (...)`) is the widest —
 # and, because dub_core/dub_generate/system import torch at module level,
 # one of the slowest — import in the codebase. It now happens in
 # _phase_a_build (`api_routes` step) after ml_imports; _phase_a_finalize
@@ -733,6 +733,7 @@ def _phase_a_build_inner() -> None:
         personas,
         sonitranslate,
         audiobook,
+        chapter_splitting,
         longform_jobs,
         pronunciation,  # Expressive-TTS Spec 01: user pronunciation dictionary
         settings as settings_router,  # Phase 1 AUTH-03: HF token save/clear/state
@@ -749,7 +750,8 @@ def _phase_a_build_inner() -> None:
         stories, setup, gallery, archetypes, describe_voice, community,
         batch, watermark, events, capture, capture_ws, speech_platform, dictation,
         openai_compat, tts_stream, marketplace, personas, sonitranslate,
-        audiobook, longform_jobs, pronunciation, settings_router,
+        audiobook, chapter_splitting, longform_jobs, pronunciation,
+        settings_router,
         media_tools_router, auth_router, _mcp_bindings_router,
         _telephony_twilio_router, _calls_router,
     ])
