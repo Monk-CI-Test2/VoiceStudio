@@ -191,6 +191,7 @@ POST /api/settings/storage/temp/clear
 POST /archetypes/previews/check
 POST /archetypes/{archetype_id}/use
 POST /audiobook
+POST /audiobook/chapters/preview
 POST /audiobook/cover
 POST /audiobook/import
 POST /audiobook/plan
