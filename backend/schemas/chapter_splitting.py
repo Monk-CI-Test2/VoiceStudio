@@ -5,11 +5,11 @@ from __future__ import annotations
 from pydantic import BaseModel, Field, field_validator
 
 
-DEFAULT_MAX_HEADING_LEVEL = 1
+DEFAULT_MAX_HEADING_LEVEL = 2
 
 
 class ChapterSplitOptions(BaseModel):
-    max_heading_level: int | None = None
+    max_heading_level: int | None = DEFAULT_MAX_HEADING_LEVEL
     include_heading: bool = True
     preserve_preface: bool = True
     minimum_characters: int = Field(default=1, ge=1)

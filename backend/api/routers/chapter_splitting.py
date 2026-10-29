@@ -18,7 +18,7 @@ def preview_chapters(request: ChapterSplitRequest) -> ChapterSplitResponse:
     options = request.options
     if request.split_on_headings and options is None:
         # Compatibility with the boolean used before structured options.
-        options = ChapterSplitOptions(max_heading_level=3)
+        options = ChapterSplitOptions()
 
     return ChapterSplitResponse(
         chapters=split_markdown_chapters(request.markdown, options)
