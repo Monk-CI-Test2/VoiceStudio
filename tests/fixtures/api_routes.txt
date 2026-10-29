@@ -280,6 +280,7 @@ POST /pronunciation/import
 POST /pronunciation/test
 POST /setup/warmup
 POST /stories/encode
+POST /subtitles/compaction/preview
 POST /system/crash/ack
 POST /system/diagnostic-bundle
 POST /system/flush-memory
