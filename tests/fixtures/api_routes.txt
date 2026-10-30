@@ -236,6 +236,7 @@ POST /engines/translation/select
 POST /engines/translation/{engine_id}/install
 POST /engines/{engine_id}/selftest
 POST /export
+POST /export-naming/preview
 POST /export/record
 POST /export/reveal
 POST /gallery/download
