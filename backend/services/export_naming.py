@@ -33,7 +33,7 @@ def build_export_names(
         options = ExportNamingOptions(fields=list(DEFAULT_EXPORT_NAME_FIELDS))
 
     # An explicitly supplied options object is treated as authoritative.
-    fields = options.fields or []
+    fields = options.fields if (options.fields is not None and len(options.fields) > 0) else list(DEFAULT_EXPORT_NAME_FIELDS)
     separator = options.separator
     seen: dict[str, int] = {}
     filenames: list[str] = []

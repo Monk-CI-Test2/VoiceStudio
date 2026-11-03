@@ -3,6 +3,7 @@
 from fastapi import APIRouter
 
 from schemas.export_naming import (
+    DEFAULT_EXPORT_NAME_FIELDS,
     ExportNamingOptions,
     ExportNamingPreviewRequest,
     ExportNamingPreviewResponse,
@@ -20,7 +21,7 @@ def preview_export_names(
     options = request.options
     if request.standard_names and options is None:
         # Compatibility for clients that predate structured naming options.
-        options = ExportNamingOptions(fields=["project", "take"])
+        options = ExportNamingOptions(fields=list(DEFAULT_EXPORT_NAME_FIELDS))
 
     return ExportNamingPreviewResponse(
         filenames=build_export_names(
