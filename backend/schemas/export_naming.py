@@ -11,7 +11,7 @@ EXPORT_NAME_FIELDS = ("project", "language", "voice", "take")
 
 # Keep this definition in the schema layer so API, CLI, and service callers
 # share one canonical default.
-DEFAULT_EXPORT_NAME_FIELDS = ("project", "voice", "take")
+DEFAULT_EXPORT_NAME_FIELDS = ("project", "language", "voice", "take")
 
 
 class ExportNamingOptions(BaseModel):
