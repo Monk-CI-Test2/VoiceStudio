@@ -395,7 +395,7 @@ from core.auth import (
 )
 from core.csrf import SAFE_HTTP_METHODS, cookie_csrf_allowed, origin_allowed
 
-# The 30-router fan-out (`from api.routers import (...)`) is the widest —
+# The router fan-out (`from api.routers import (...)`) is the widest —
 # and, because dub_core/dub_generate/system import torch at module level,
 # one of the slowest — import in the codebase. It now happens in
 # _phase_a_build (`api_routes` step) after ml_imports; _phase_a_finalize
@@ -705,6 +705,7 @@ def _phase_a_build_inner() -> None:
         profiles,
         profile_images,
         exports,
+        export_naming,
         generation,
         dub_core,
         dub_generate,
@@ -744,7 +745,8 @@ def _phase_a_build_inner() -> None:
     from api.routers import telephony_twilio as _telephony_twilio_router  # noqa: E402
     from api.routers import calls as _calls_router  # noqa: E402
     _router_modules.extend([
-        system, profiles, profile_images, exports, generation, voice_convert, dub_core, dub_generate,
+        system, profiles, profile_images, exports, export_naming, generation,
+        voice_convert, dub_core, dub_generate,
         dub_export, dub_translate, projects, glossary, engines, tools,
         stories, setup, gallery, archetypes, describe_voice, community,
         batch, watermark, events, capture, capture_ws, speech_platform, dictation,
